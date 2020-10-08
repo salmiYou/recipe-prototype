@@ -1,0 +1,26 @@
+<div>
+  <div>{{#link-to "recipes.index"}} back to the list {{/link-to}}</div>
+  <h2>Recette {{model.name}}</h2>
+  <ul>
+    <li>Author: {{model.author.name}}</li>
+    <li>Author tip: {{model.authorTip}}</li>
+    <li>Preparation time: {{model.prepTime}}</li>
+    <li>Cook time: {{model.cookTime}}</li>
+    <li>Rate: {{model.rate}}</li>
+    <li>Difficulty: {{model.difficulty}}</li>
+    <li>People quantity: {{model.peopleQuantity}}</li>
+    <li>Number of comments: {{model.nbComments}}</li>
+  </ul>
+  <h4>Ingredients</h4>
+  <ul>
+    {{#each model.ingredients as |ingredient|}}
+      <li>{{ingredient.name}}</li>
+    {{/each}}
+  </ul>
+  <h4>Tags</h4>
+  <ul>
+    {{#each model.tags as |tag|}}
+      <li>#{{tag.name}}</li>
+    {{/each}}
+  </ul>
+</div>

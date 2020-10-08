@@ -1,0 +1,12 @@
+<div>
+  {{input type="text" value=searchFieldValue placeholder="Search ..." key-up=(action "searchRecipes")}}
+  {{#if model.length}}
+    <ul>
+      {{#each model as |recipe|}}
+        <li>recette : {{#link-to "recipes.show" recipe}}{{recipe.name}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <h4>Enter ingredient, tag or recipe name in the search field</h4>
+  {{/if}}
+</div>
